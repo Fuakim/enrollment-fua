@@ -26,6 +26,7 @@ public class StudentServiceTest {
     @MockBean
     private StudentServiceImpl service;
 
+    @MockBean
     private IStudentRepo repo;
 
     private Student STUDENT_1;
