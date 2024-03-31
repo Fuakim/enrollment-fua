@@ -1,0 +1,80 @@
+
+ALTER TABLE public.course DISABLE TRIGGER ALL;
+
+INSERT INTO public.course (id, code, enabled, name, id_course) VALUES (1, 'LEN', true, 'Lenguas', 1);
+INSERT INTO public.course (id, code, enabled, name, id_course) VALUES (2, 'CIE', true, 'Ciencia', 2);
+INSERT INTO public.course (id, code, enabled, name, id_course) VALUES (3, 'MAT', true, 'Mathe', 4);
+
+
+ALTER TABLE public.course ENABLE TRIGGER ALL;
+
+
+ALTER TABLE public.student DISABLE TRIGGER ALL;
+
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (1, 23, '123456', 'Fallas', 'Cris', 1);
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (2, 33, '65428', 'Perez', 'Joaquin', 2);
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (3, 25, '47865', 'Romero', 'Jerson', 3);
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (4, 29, '951357', 'Montero', 'Eduardo', 4);
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (5, 52, '4562', 'Valverde', 'Carlos', 5);
+INSERT INTO public.student (id, age, dni, last_name, name, id_student) VALUES (7, 18, '75645', 'Chinchilla', 'Lorena', 6);
+
+
+ALTER TABLE public.student ENABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.enrollment DISABLE TRIGGER ALL;
+
+INSERT INTO public.enrollment (id, date_time, enabled, student, id_enrollment) VALUES (1, '2024-03-31 16:03:44', true, 3, 1);
+INSERT INTO public.enrollment (id, date_time, enabled, student, id_enrollment) VALUES (3, '2024-03-31 17:22:04', true, 5, 3);
+INSERT INTO public.enrollment (id, date_time, enabled, student, id_enrollment) VALUES (4, '2024-03-31 17:22:04', true, 4, 4);
+INSERT INTO public.enrollment (id, date_time, enabled, student, id_enrollment) VALUES (5, '2024-03-31 17:22:04', true, 3, 5);
+INSERT INTO public.enrollment (id, date_time, enabled, student, id_enrollment) VALUES (6, '2024-03-31 17:22:04', true, 2, 6);
+
+
+ALTER TABLE public.enrollment ENABLE TRIGGER ALL;
+
+
+ALTER TABLE public.enrollment_detail DISABLE TRIGGER ALL;
+
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (1, 'A1', 1, 1, 1);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (3, 'A3', 3, 3, 3);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (4, 'B7', 2, 3, 4);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (5, 'A3', 1, 4, 5);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (6, 'B7', 2, 4, 6);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (7, 'A3', 1, 5, 7);
+INSERT INTO public.enrollment_detail (id, classroom, course, enrollment, id_enrollment_detail) VALUES (8, 'A3', 3, 6, 8);
+
+
+ALTER TABLE public.enrollment_detail ENABLE TRIGGER ALL;
+
+
+SELECT pg_catalog.setval('public.course_id_course_seq', 4, true);
+
+
+
+
+SELECT pg_catalog.setval('public.enrollment_detail_id_enrollment_detail_seq', 8, true);
+
+
+
+
+SELECT pg_catalog.setval('public.enrollment_detail_id_seq', 8, true);
+
+
+
+
+SELECT pg_catalog.setval('public.enrollment_id_enrollment_seq', 6, true);
+
+
+
+SELECT pg_catalog.setval('public.enrollment_id_seq', 6, true);
+
+
+
+SELECT pg_catalog.setval('public.student_id_seq', 7, true);
+
+
+SELECT pg_catalog.setval('public.student_id_student_seq', 6, true);
+
+
